@@ -10,17 +10,17 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
     $scope.global = Global;
 
     // The nav links you see once you log in are pulled from here.
-    $scope.menu = [{
-        'title': 'Articles',
+    $scope.menu = [
+        {
+            title: 'List',
+            link: 'runs'
+        },
 
-        // GOTO: /public/js/config.js (GET /articles)
-        'link': 'articles'
-    }, {
-        'title': 'Create New Article',
-
-        // GOTO: /public/js/config.js (GET /articles/create)
-        'link': 'articles/create'
-    }];
+        {
+            title: 'Add',
+            link: 'runs/create'
+        }
+    ];
 
     // This isn't used anywhere.
     $scope.isCollapsed = false;

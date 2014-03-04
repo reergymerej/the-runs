@@ -1,0 +1,23 @@
+<section data-ng-controller="RunsCtrl">
+	<form class="form-horizontal col-md-6" role="form" data-ng-submit="create()">
+		<div class="form-group">
+			<label for="date" class="col-md-2 control-label">Date</label>
+			<div class="col-md-10">
+				<input type="text" class="form-control" data-ng-model="date" id="date" placeholder="Date" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="distance" class="col-md-2 control-label">Distance</label>
+			<div class="col-md-10">
+				<input type="text" class="form-control" data-ng-model="distance" id="distance" placeholder="Distance" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<button type="submit" class="btn btn-default">Submit</button>
+			</div>
+		</div>
+	</form>
+</section>

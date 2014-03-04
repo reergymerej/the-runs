@@ -46,6 +46,21 @@ angular.module('mean').config(['$stateProvider', '$urlRouterProvider',
         templateUrl: 'views/articles/view.html'
     })
 
+      .state('all runs', {
+        url: '/runs',
+        templateUrl: 'views/runs/list.html'
+    })
+
+      .state('add run', {
+        url: '/runs/create',
+        templateUrl: 'views/runs/create.html'
+    })
+
+      .state('run by id', {
+        url: '/runs/:id',
+        templateUrl: 'views/runs/view.html'
+    })
+
       // This is the default when no other routes were matched.
       .state('home', {
         url: '/',

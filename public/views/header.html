@@ -5,7 +5,7 @@ GOTO: /public/js/controllers/header.js
 <div class="" data-ng-controller="HeaderController">
     <ul class="navbar-nav nav">
         <li>
-            <a class="navbar-brand" href="/">MEAN - A Modern Stack</a>
+            <a class="navbar-brand" href="/">The Runs</a>
         </li>
 
         <!-- 
@@ -18,7 +18,7 @@ GOTO: /public/js/controllers/header.js
 
         ng-class adds "active" to the li if the route matches the link
          -->
-        <li data-ng-repeat="item in menu" data-ng-show="global.user" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
+        <li data-ng-repeat="item in menu" data-ng-show="global.user || true" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
 
             <!-- 
             The href and text come from the menu items in the controller.

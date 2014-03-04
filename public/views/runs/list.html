@@ -1,0 +1,11 @@
+<section data-ng-controller="RunsCtrl" data-ng-init="find()">
+	<ul class="runs unstyled">
+        <!-- 
+        Loop through "articles" in the controller.
+         -->
+		<li data-ng-repeat="run in runs">
+            {{ run | json }}
+			<h2><a data-ng-href="#!/runs/{{ run._id }}">view</a></h2>
+		</li>
+	</ul>
+</section>

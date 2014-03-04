@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-    db: 'mongodb://localhost/mean-dev',
+    db: 'mongodb://localhost/the-runs',
     app: {
-        name: 'MEAN - A Modern Stack - Development'
+        name: 'The Runs'
     },
     facebook: {
         clientID: 'APP_ID',

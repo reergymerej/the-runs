@@ -1,0 +1,14 @@
+<section data-ng-controller="RunsCtrl" data-ng-init="findOne()">
+
+    <div>
+
+        <a class="btn" href="/#!/runs/{{ run._id }}/edit" data-ng-show="false">
+            <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn" data-ng-click="delete();">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+        
+    </div>
+    {{ run | json }}
+</section>
