@@ -1,14 +1,21 @@
 <section data-ng-controller="RunsCtrl" data-ng-init="findOne()">
-
     <div>
+        <a class="btn" href="/#!/runs">
+            <i class="glyphicon glyphicon-th-list"></i>
+        </a>
+        <h2>{{ run.date | date:'MMMM d, yyyy' }}</h2>
+        <p>{{ run.distance }} miles</p>
+    </div>
+    <div>
+        
 
-        <a class="btn" href="/#!/runs/{{ run._id }}/edit" data-ng-show="false">
+        <a class="btn" href="/#!/runs/{{ run._id }}/edit">
             <i class="glyphicon glyphicon-edit"></i>
         </a>
+        
         <a class="btn" data-ng-click="delete();">
             <i class="glyphicon glyphicon-trash"></i>
         </a>
         
     </div>
-    {{ run | json }}
 </section>

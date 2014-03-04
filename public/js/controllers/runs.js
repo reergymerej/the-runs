@@ -3,12 +3,14 @@
 // $scope       This is created for each directive.
 // $stateParams This comes from AngularUI Router.
 // $location    http://docs.angularjs.org/guide/dev_guide.services.$location
-angular.module('runs').controller('RunsCtrl', [ '$scope', '$stateParams', '$location', 'Runs', function ($scope, $stateParams, $location, Runs) {
+angular.module('runs').controller('RunsCtrl', ['$resource', '$scope', '$stateParams', '$location', 'Runs', function ($resource, $scope, $stateParams, $location, Runs) {
 
     $scope.run = undefined;
     $scope.runs = undefined;
     $scope.date = new Date();
     $scope.distance = undefined;
+
+
 
     // $scope.create = function() {
 
@@ -133,8 +135,19 @@ angular.module('runs').controller('RunsCtrl', [ '$scope', '$stateParams', '$loca
         });
     };
 
-    $scope.delete = function () {
-        $scope.run.$remove();
-        $location.path('runs');
+    $scope.delete = function (run) {
+        var whichRun = run || $scope.run;
+
+
+        if (confirm('Really?')) {
+            whichRun.$remove();
+            // $scope.run.$remove();
+
+            if (!$scope.runs) {
+                $location.path('runs');
+            } else {
+                $scope.runs.splice($scope.runs.indexOf(run), 1);
+            }
+        }
     };
 }]);

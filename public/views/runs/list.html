@@ -1,11 +1,13 @@
 <section data-ng-controller="RunsCtrl" data-ng-init="find()">
 	<ul class="runs unstyled">
-        <!-- 
-        Loop through "articles" in the controller.
-         -->
 		<li data-ng-repeat="run in runs">
-            {{ run | json }}
-			<h2><a data-ng-href="#!/runs/{{ run._id }}">view</a></h2>
+            <a data-ng-href="#!/runs/{{ run._id }}">
+                {{ run.date | date:'MMMM d, yyyy' }} -
+                {{ run.distance }} miles 
+            </a>
+            <a class="btn" data-ng-click="delete(run)">
+                <i class="glyphicon glyphicon-trash"></i>
+            </a>
 		</li>
 	</ul>
 </section>
