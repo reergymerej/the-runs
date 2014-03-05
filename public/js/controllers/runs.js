@@ -118,6 +118,8 @@ angular.module('runs').controller('RunsCtrl', ['$resource', '$scope', '$statePar
             id: $stateParams.id
         }, function (run) {
             $scope.run = run;
+            $scope.date = run.date;
+            $scope.distance = run.distance;
         });
     };
 
