@@ -61,10 +61,10 @@ angular.module('mean').config(['$stateProvider', '$urlRouterProvider',
         url: '/runs/:id',
         templateUrl: 'views/runs/view.html'
     })
-      
+
       .state('edit run', {
         url: '/runs/:id/edit',
-        templateUrl: 'views/runs/create.html'
+        templateUrl: 'views/runs/edit.html'
     })
 
       // This is the default when no other routes were matched.

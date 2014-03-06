@@ -81,6 +81,13 @@ angular.module('runs').controller('RunsCtrl', ['$resource', '$scope', '$statePar
     //         $location.path('articles');
     //     }
     // };
+    $scope.update = function () {
+        $scope.run.$update(function (run) {
+            $location.path('runs/' + run._id);
+        }, function (run) {
+            console.error(run);
+        });
+    };
 
     // // This is called by the edit page. (/public/views/articles/edit.html)
     // $scope.update = function() {
