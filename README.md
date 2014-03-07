@@ -81,6 +81,11 @@ Change db in production (/config/env/production.js).
 
 Commit everything.
 
+## How do you save your configuration to Github without displaying your credentials?
+
+Can you omit the credentials from github and just push to heroku with your local files?
+
+
 ---
 # References
 
