@@ -42,6 +42,11 @@ In the console, test that you can connect.
 
     mongo troup.mongohq.com:10027/reergymerej -u <user> -p<password>
 
+    or
+
+    mongo troup.mongohq.com:10027/reergymerej
+    db.auth('dude', 'dude');
+
 See if you can connect your local app.
 
 Where do you change it?
@@ -54,6 +59,27 @@ Welcome to Error Town.
 
 I know the authentication works since I can connect through the terminal directly.  I'm too tired to figure this out tonight.
 
+The problem was with my copy/paste.  In /config/env/development.js, I specified:
+
+    db: 'mongodb://dude:dude@troup.mongohq.com:10027/',
+
+instead of:
+
+    db: 'mongodb://dude:dude@troup.mongohq.com:10027/reergymerej',
+
+Dur.
+
+I tested locally pointing at the remote db and everything's working.  I confirmed through the UI and terminal.
+
+    mongo troup.mongohq.com:10027/reergymerej
+    db.auth('dude', 'dude');
+    db.runs.find().pretty();
+
+Now, let's deploy this sucker.
+
+Change db in production (/config/env/production.js).
+
+Commit everything.
 
 ---
 # References
