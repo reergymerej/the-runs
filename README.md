@@ -84,10 +84,36 @@ Commit everything.
 ## How do you save your configuration to Github without displaying your credentials?
 
 Can you omit the credentials from github and just push to heroku with your local files?
+    http://cogniton-mind.tumblr.com/post/63560840467/howto-gitignore-for-different-branches-update
 
+    http://stackoverflow.com/questions/3234154/git-how-to-ignore-a-file-from-one-repo-and-add-it-to-another
+
+Made local changes, saved but did not commit.
+
+    git push heroku master
+
+Did the change show up?
+
+    - no, everything up to date
+
+Commit
+
+    git push heroku master
+
+## Deploy to Heroku
+
+The changes must be commited to the local git repo before they can be pushed to Heroku.
+
+
+After changing my dev db back to localhost, heroku wasn't starting.  The Heroku app must be using development.
+
+
+There's a MONGOHQ_URL in /config/env/all.js.  We should probably use that.
 
 ---
 # References
+
+http://cogniton-mind.tumblr.com/post/63560840467/howto-gitignore-for-different-branches-update
 
 http://www.100percentjs.com/deploying-mean-io-to-heroku/
 
